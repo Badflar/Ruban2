@@ -3,13 +3,13 @@ const Request = require('tedious').Request
 const TYPES = require('tedious').TYPES; 
 const config = require("../config.json");
 
-var config = {
+var dbConfig = {
     server: config.database.server,
     authentication: {
-        type: config.database.server.authentication.type,
+        type: config.database.authentication.type,
         options: {
-            userName: config.database.server.authentication.options.userName,
-            password: config.database.server.authentication.options.password
+            userName: config.database.authentication.options.userName,
+            password: config.database.authentication.options.password
         }
     },
     options: {
@@ -19,7 +19,7 @@ var config = {
 
 module.exports = {
     InsertBotSuggestion: function(message, args) {
-        var connection = new Connection(config);
+        var connection = new Connection(dbConfig);
         connection.on('connect', function(err) {
             var request = new Request('usp_ins_BotSuggestion',
             function(err) {
