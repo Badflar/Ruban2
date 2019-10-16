@@ -22,7 +22,8 @@ bot.on('ready', async () => {
     let statuses = [
         `${bot.guilds.size} guilds!`,
         `;r help`,
-        `over ${bot.users.size} users!`
+        `over ${bot.users.size} users!`,
+        'Now on AWS and GitHub!'
     ]
 
     setInterval(function() {
