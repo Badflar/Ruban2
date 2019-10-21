@@ -24,7 +24,7 @@ bot.on('ready', async () => {
         `;r help`,
         `over ${bot.users.size} users!`,
         'Now on AWS and GitHub!',
-        'Woof!!'
+        'Woof!'
     ]
 
     setInterval(function() {
