@@ -23,7 +23,8 @@ bot.on('ready', async () => {
         `${bot.guilds.size} guilds!`,
         `;r help`,
         `over ${bot.users.size} users!`,
-        'Now on AWS and GitHub!'
+        'Now on AWS and GitHub!',
+        'Woof!!'
     ]
 
     setInterval(function() {
