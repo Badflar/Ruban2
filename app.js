@@ -8,13 +8,6 @@ bot.aliases = new Collection();
 ["commands", "aliases"].forEach(x => bot[x] = new Collection());
 ["command", "event"].forEach(x => require(`./handlers/${x}`)(bot));
 
-let y = process.openStdin()
-y.addListener("data", res => {
-    let x = res.toString().split(/ +/g);
-    let channel = x[0].toString();
-    x.shift();
-    bot.channels.get(channel).send(Array.prototype.join.call(x, " "));
-})
 
 bot.on('ready', async () => {
     console.log(`Bot is ready! ${bot.user.username}`);
